@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivy's Pisonet Leaderboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        body { font-family: 'Press Start 2P', cursive; }
+        .pixel-shadow { box-shadow: 4px 4px 0px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body class="bg-[#3b5bdb] min-h-screen flex flex-col items-center justify-center p-4">
+
+    <div class="text-center mb-6 w-full">
+        <p class="text-white text-[10px] mb-3 tracking-widest opacity-80 uppercase">Ivy's Pisonet</p>
+        <div class="bg-red-600 border-4 border-yellow-400 rounded-full py-3 px-6 shadow-xl inline-block transform -rotate-1">
+            <h1 class="text-white text-xs md:text-lg italic font-bold">ROBLOX GIVE-AWAY</h1>
+        </div>
+    </div>
+
+    <div class="bg-[#1c92ff] w-full max-w-md md:max-w-lg rounded-2xl p-5 md:p-8 border-b-8 border-black/20 shadow-2xl">
+        <h2 class="text-white text-center text-xl mb-8 tracking-tighter">LEADERBOARD</h2>
+
+        <div id="leaderboard-list" class="space-y-4">
+            </div>
+    </div>
+<script src="server.js"></script>
+</body>
+</html>
