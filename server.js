@@ -2,8 +2,6 @@ const SUPABASE_URL = 'https://avkwuvnshxkhpxfgyrqy.supabase.co';
         const SUPABASE_KEY = 'sb_publishable_ZcLXk3Eqmu1ramk5sbbQoQ_wKWmaQb-';
         const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-// ... (Your URL and KEY stay the same)
-
 // 1. Rename this to fetchLeaderboard to match your calls below
 async function fetchLeaderboard() { 
     const { data, error } = await supabaseClient
@@ -47,4 +45,5 @@ supabaseClient
     .channel('any')
     .on('postgres_changes', { event: '*', schema: 'public', table: 'leaderboard' }, fetchLeaderboard)
     .subscribe();
+
 
