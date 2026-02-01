@@ -6,13 +6,14 @@ async function fetchLeaderboard() {
     const { data, error } = await supabaseClient
         .from('leaderboard')
         .select('*')
-        // 1. FIXED: Order by 'robux' descending so the highest score is Rank 1
+        // Order by robux descending so the highest score is automatically Rank 1
         .order('robux', { ascending: false }); 
 
     if (error) return console.error(error);
 
     const container = document.getElementById('leaderboard-list');
-    // 2. FIXED: Use 'index + 1' for automatic ranking so you don't see "null"
+    
+    // We use (player, index) to calculate the rank (1, 2, 3...) automatically
     container.innerHTML = data.map((player, index) => `
         <div class="bg-[#005fb8] flex items-center p-3 rounded-lg pixel-shadow border border-white/10 mb-4">
             <div class="flex-shrink-0 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-[10px] text-black font-bold mr-3 ring-2 ring-yellow-200">
